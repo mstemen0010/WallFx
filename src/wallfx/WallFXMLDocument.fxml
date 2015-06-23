@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="393.0" prefWidth="606.0" styleClass="mainFxmlClass" stylesheets="@../com/wms/styles/Flatfxml.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wallfx.WallFXMLDocumentController">
+   <children>
+      <Label layoutX="12.0" layoutY="35.0" prefHeight="35.0" prefWidth="105.0" styleClass="flat-butto-5-16" text=" Image Path: " />
+      <TextField fx:id="imagePath" layoutX="127.0" layoutY="35.0" prefHeight="35.0" prefWidth="345.0" styleClass="flat-butto-5-16" text="C:\Users\matthew.g.stemen\Pictures\Backgrounds" />
+      <ImageView fx:id="imageThumbNail" fitHeight="191.0" fitWidth="279.0" layoutX="14.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Pictures/Backgrounds/14_Segment_LCD_characters.jpg" />
+         </image>
+      </ImageView>
+      <ListView fx:id="imageList" layoutX="308.0" layoutY="141.0" onMouseClicked="#loadImageThumbNail" prefHeight="228.0" prefWidth="289.0" styleClass="flat-butto-5-16" />
+      <ImageView fitHeight="109.0" fitWidth="112.0" layoutX="482.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/wallfx_flat_icon.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="loadPathButton" layoutX="414.0" layoutY="74.0" mnemonicParsing="false" onAction="#loadFromPath" styleClass="flat-button-3-16" text="Load" />
+      <RadioButton id="centeredButton" fx:id="centeredButton" layoutX="21.0" layoutY="271.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="105.0" selected="true" styleClass="flat-button-3-16" text="Center">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="fillButton" fx:id="fillButton" layoutX="21.0" layoutY="303.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="105.0" styleClass="flat-button-3-16" text="Fill" toggleGroup="$toggleGroup" />
+      <RadioButton id="tileButton" fx:id="tileButton" layoutX="21.0" layoutY="336.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="105.0" styleClass="flat-button-3-16" text="Tile" toggleGroup="$toggleGroup" />
+      <RadioButton id="fitButton" fx:id="fitButton" layoutX="147.0" layoutY="271.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="105.0" styleClass="flat-button-3-16" text="Fit" toggleGroup="$toggleGroup" />
+      <RadioButton id="streachButton" fx:id="streachButton" layoutX="147.0" layoutY="303.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="105.0" selected="true" styleClass="flat-button-3-16" text="Stretch" toggleGroup="$toggleGroup" />
+   </children>
+</AnchorPane>
