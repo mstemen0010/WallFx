@@ -23,7 +23,9 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -33,6 +35,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class WallFXMLDocumentController extends AnchorPane {
@@ -90,6 +93,7 @@ public class WallFXMLDocumentController extends AnchorPane {
         this.fitButton.setToggleGroup(toggleGroup);
         this.streachButton.setToggleGroup(toggleGroup);
         // this.tileButton.setId(  );
+        
 
         toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             public void changed(ObservableValue<? extends Toggle> ov,
@@ -113,12 +117,21 @@ public class WallFXMLDocumentController extends AnchorPane {
             }
         });
         
+        
+        imagePath.setOnKeyPressed(
+            new EventHandler<KeyEvent>() {
+                public void handle(KeyEvent event) {
+                    updateImagePathName(event); 
+                }
+            });
+        
     }
     
     @FXML
     void loadFromPath() {
         ArrayList<String> extNameArray = new ArrayList<>();
         extNameArray.add("jpg");
+        extNameArray.add("jpeg");
         extNameArray.add("bmp");
         
         ArrayList<String> imageNameArray = new ArrayList<>();
@@ -176,5 +189,12 @@ public class WallFXMLDocumentController extends AnchorPane {
         this.imageThumbNail.setImage(img);
         this.changer.load(currentPath + "\\" + imageName);
         
+    }
+    
+    @FXML
+    public void updateImagePathName(Event event)
+    {
+        this.imagePathName = this.imagePath.getText();
+        System.out.println("Image path is now: " + this.imagePathName);
     }
 }
