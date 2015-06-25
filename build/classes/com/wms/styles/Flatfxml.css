@@ -23,6 +23,40 @@ and open the template in the editor.
     -fx-border-width: 2;
     -fx-text-fill: white;
 }
+
+.mainFxmlClassPomengranted {
+    -fx-font-family: 'Agency';
+    -fx-font-weight: bold;
+    -fx-background-color: #c0392b;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-text-fill: white;
+}
+
+.mainFxmlClassOrange {
+    -fx-font-family: 'Agency';
+    -fx-font-weight: bold;
+    -fx-background-color: #f39c12;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-text-fill: white;
+}
+
+.mainFxmlSunFlower {
+    -fx-font-family: 'Agency';
+    -fx-font-weight: bold;
+    -fx-background-color: #f1c40f;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-text-fill: white;
+}
+
 .flat-button-1-18
 {   
     -fx-font-family: "Roboto";
